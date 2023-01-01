@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to generate random coordinates for Minecraft:</p>
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="coordinates"></p>
+
+<script>
+function myFunction() {
+  var x = Math.floor(Math.random() * 30000000);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 30000000);
+  document.getElementById("coordinates").innerHTML = "X: " + x + " Y: " + y + " Z: " + z;
+}
+</script>
+
+</body>
+</html>
