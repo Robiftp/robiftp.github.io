@@ -3,9 +3,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="5; url=https://robiftp.github.io/CoordsGen.html">
+    <title>My Website</title>
   </head>
   <body>
-    You will be redirected to the "Minecraft Random Coordinate Generator" website in 5 seconds. If you are not redirected automatically, please click <a href="https://robiftp.github.io/CoordsGen.html">here</a>.
+    <h1>Welcome to My Website</h1>
+    <nav>
+      <a href="https://robiftp.github.io/CoordsGen.html">Minecraft Random Coordinate Generator</a> |
+      <a href="https://robiftp.github.io/strong-password-generator.html">Strong Password Generator</a>
+    </nav>
+    <p>Here is where the main content of your website goes.</p>
   </body>
 </html>
