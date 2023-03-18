@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Number Generator</title>
+	<style>
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		h1 {
+			margin-bottom: 20px;
+		}
+		#result {
+			font-size: 2em;
+			margin-bottom: 20px;
+		}
+		button {
+			font-size: 1em;
+			padding: 10px;
+			border: none;
+			background-color: #4285f4;
+			color: #fff;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #1a73e8;
+		}
+	</style>
+	<script>
+		function generateNumbers() {
+			let num = document.getElementById("num").value;
+			let output = "";
+			for (let i = 0; i < num; i++) {
+				output += Math.floor(Math.random() * 10);
+			}
+			document.getElementById("result").innerHTML = output;
+		}
+		function updateIndicator() {
+			let num = document.getElementById("num").value;
+			document.getElementById("num-label").innerHTML = num;
+		}
+		function copyToClipboard() {
+			let result = document.getElementById("result");
+			let range = document.createRange();
+			range.selectNode(result);
+			window.getSelection().removeAllRanges();
+			window.getSelection().addRange(range);
+			document.execCommand("copy");
+			window.getSelection().removeAllRanges();
+			alert("Copied: " + result.innerHTML);
+		}
+	</script>
+</head>
+<body>
+	<h1>Random Number Generator</h1>
+	<p>Select the number of digits in the random numbers to generate:</p>
+	<input type="range" min="1" max="16" value="5" id="num" oninput="updateIndicator()">
+	<div>
+		<label>Amount: <span id="num-label">5</span></label>
+	</div>
+	<p>Generated Number:</p>
+	<div id="result"></div>
+	<button onclick="generateNumbers()">Generate</button>
+	<button onclick="copyToClipboard()">Copy</button>
+</body>
+</html>
